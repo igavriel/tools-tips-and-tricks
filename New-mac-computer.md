@@ -27,7 +27,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ### plugins
 URL: [Oh my ZSH with zsh-autosuggestions zsh-syntax-highlighting zsh-fast-syntax-highlighting and zsh-autocomplete.md](https://gist.github.com/n1snt/454b879b8f0b7995740ae04c5fb5b7df)
 
-Install zsh plugins from brew
+Install zsh plugins from brew ![Mac OS X][macosx] ![Linux][linux]
 ```bash
 # Install tools
 brew install zsh-autosuggestions zsh-syntax-highlighting
@@ -108,8 +108,8 @@ Other CLI tools
 |__fzf__| A command-line fuzzy finder - interactive find |
 |__ripgrep__| rg - recursively search the current directory for lines matching a pattern |
 |__tldr__| Simplified and community-driven man pages - man replacement |
-|__exa__| A modern replacement for ls (ubuntu/debian, not on mac) |
-|__lsd__| The next generation `ls` command, written in Rust. (mac) |
+|__exa__| A modern replacement for ls (ubuntu/debian, not on mac) ![Linux][linux] |
+|__lsd__| The next generation `ls` command, written in Rust. (mac) ![Mac OS X][macosx] |
 |__ncdu__| NCurses Disk Usage |
 |__duf__| Disk Usage/Free Utility |
 |__neofetch__| Display information about your operating system, software and hardware |
@@ -124,9 +124,10 @@ links:
 https://github.com/BubuAnabelas/awesome-markdown#readme
 
 
- ![Mac OS X][macosx] ![Linux][linux] ![Windows][windows]
-
-
-
 https://raw.githubusercontent.com/ekalinin/github-markdown-toc/master/README.md
 https://github.com/ekalinin/github-markdown-toc/blob/master/README.md
+
+
+<!--Definitions-->
+[macosx]: https://img.icons8.com/color/24/mac-logo.png 'Mac OS X'
+[linux]: https://img.icons8.com/color/24//linux--v1.png 'Linux'
