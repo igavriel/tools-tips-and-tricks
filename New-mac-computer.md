@@ -393,13 +393,13 @@ kubectl get pods -n qa-env  -o custom-columns="POD:metadata.name,MOUNT:spec.cont
 2. Select `Gallery`
 3. Search `tile` in the upper right search bar
 4. Add the "Tile Last 2 Windows"
-   ![Shortcut: Gallery](mac-shortcut-1.png)
+   ![Shortcut: Gallery](media/mac-shortcut-1.png)
 
 5. Edit the shortcut and Rename to `Tile Left`
-   ![Shortcut: Edit 1](mac-shortcut-2.png)
+   ![Shortcut: Edit 1](media/mac-shortcut-2.png)
 
 6. Remove the last 2 section and change the limit from 2 to 1
-   ![Shortcut: Edit 2](mac-shortcut-3.png)
+   ![Shortcut: Edit 2](media/mac-shortcut-3.png)
 
 7. Duplicate the shortcut and do the same for `Tile Right` and also for `Fit Screen`
 8. Copy the new shortcuts to the `Quick Actions` section on the left bar of the application
@@ -409,7 +409,7 @@ kubectl get pods -n qa-env  -o custom-columns="POD:metadata.name,MOUNT:spec.cont
     Right __`⌃ ⌥ ⌘ ←`__
     Fit __`⌃ ⌥ ⌘ ↑`__
     NOTE: if you are using a magic keyboard you may get this combination as result __`⌃ ⌥ ⌘ 🌐︎ ↑`__ this is OK - its map the function key as globe key
-    ![Shortcut: Quick Actions](mac-shortcut-4.png)
+    ![Shortcut: Quick Actions](media/mac-shortcut-4.png)
 
 __OBSOLETE:__ The following section is working in mac OS 14.x and not for 15.0
 
