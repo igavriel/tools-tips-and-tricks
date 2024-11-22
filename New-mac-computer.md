@@ -1,6 +1,6 @@
 # Installing new Mac
 
-This procedure describe how to install a new Mac laptop and configure it for python development
+This procedure describe how to install a new Mac laptop and configure it for python development. There also hints for the same command in Linux shell.
 
 ## Contents
 - [CLI Tools](#cli-tools)
@@ -16,14 +16,15 @@ This procedure describe how to install a new Mac laptop and configure it for pyt
 - [Docker, Kubernates and other Vegetables](#docker-kubernates-and-other-vegetables)
   - [lazydocker](#lazydocker)
   - [K8s CLI tools](#k8s-cli-tools)
+  - [K9s](#k9s)
   - [Docker Desktop](#docker-desktop)
   - [OpenLens](#openlens)
+  - [Useful Commands](#useful-commands)
 - [Tile windows shortcut](#tile-windows-shortcut)
-- [Google Drive](#google-drive)
 - [Maccy](#maccy)
 - [Meslo-Font](#meslo-font)
 - [iTerm2](#iterm2)
-- [Double Commander](#double-commander)
+- [Application](#applications)
 
 -------------------------------------------------------------------------------
 
@@ -65,7 +66,7 @@ brew install zsh-autosuggestions zsh-syntax-highlighting
 Ubuntu/debian ![Linux][linux]
 
 ```bash
-#UBUNTU# sudo apt install zsh-autosuggestions zsh-syntax-highlighting
+sudo apt install zsh-autosuggestions zsh-syntax-highlighting
 ```
 
 install plugins in zsh:
@@ -94,7 +95,11 @@ vi ~/.zshrc
 Find the line which says plugins=(git) and replace that line with
 
 ```bash
-plugins=(git colored-man-pages colorize pip python brew kubectl docker zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)
+# this line is used for zsh plugins only
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)
+
+# use this line for python, docker, k8s, npm and zsh plugins
+plugins=(git brew colored-man-pages colorize python pip pyenv docker kubectl helm azure npm nvm zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete)
 ```
 
 run .zshrc
@@ -152,8 +157,8 @@ p10k configure
 |__neofetch__| Display information about your operating system, software and hardware |
 |__tig__| A text-mode interface for Git |
 
-* Best ncurses linux console programs <https://www.etcwiki.org/wiki/Best_ncurses_linux_console_programs>
-* Command line tools <https://hackingcpp.com/dev/command_line_tools.html>
+- Best ncurses linux console programs <https://www.etcwiki.org/wiki/Best_ncurses_linux_console_programs>
+- Command line tools <https://hackingcpp.com/dev/command_line_tools.html>
 
 Installing commands
 
@@ -177,7 +182,7 @@ sudo apt install ncdu duf neofetch tig
 
 ### Bash alias
 
-Create a bash aliases file
+Create a bash aliases file using echo command
 
 ```bash
 touch ~/.bash_aliases
@@ -186,11 +191,14 @@ echo -e \
 "alias h='history'\n"\
 "alias which='type -a'\n"\
 "alias ..='cd ..'\n"\
+"alias ls='/bin/ls -h --color=auto'\n"\
 "alias ll='ls -lv --group-directories-first'\n"\
-"alias lm='ll |more'        #  Pipe through 'more'\n"\
-"alias lr='ll -R'           #  Recursive ls.\n"\
-"alias la='ll -a'           #  Show hidden files.\n"\
-"alias grep='grep --color'\n"\
+"alias lt='ls -ltr'         #  Sort by date, most recent last\n"\
+"alias lm='ll | more'       #  Pipe through more\n"\
+"alias lr='ll -R'           #  Recursive ls\n"\
+"alias la='ll -a'           #  Show hidden files\n"\
+"alias grep='/bin/grep --color=auto'\n"\
+"alias diff='/usr/bin/diff --color=auto'\n"\
 "alias bat=batcat\n"\
 "alias dex='_dexec(){ docker exec -it \"\$@\" bash; unset -f _dexec;}; _dexec'\n"\
 "alias dps='docker ps --format \"table {{.Names}}\t{{.ID}}\t{{.Image}}\t{{.Ports}}\" | sort'\n"\
@@ -253,7 +261,24 @@ vi ~/.vimrc
 Append the following option:
 
 ```bash
-syntax on
+" Indentation
+set tabstop=4      " Number of spaces that a <Tab> counts for
+set shiftwidth=4   " Number of spaces for each step of (auto)indent
+set expandtab      " Use spaces instead of tabs
+
+" Search
+set ignorecase     " Ignore case while searching
+set smartcase      " Override ignorecase if search contains capital letters
+set incsearch      " Show matches as you type
+set hlsearch       " Highlight search results
+
+" Syntax highlighting - works on vim only
+syntax   on
+filetype on
+
+" Toggle paste mode with F2
+" Auto-indentation, Line wrapping, Syntax highlighting adjustments, Mapping of certain keys
+set pastetoggle=<F2>
 ```
 
 Save and close the file
@@ -264,7 +289,7 @@ Save and close the file
 
 ### lazydocker
 
-Install lazydocker <https://github.com/jesseduffield/lazydocker#installation> MIT License.
+Install `lazydocker` <https://github.com/jesseduffield/lazydocker#installation> MIT License.
 Normally lazydocker formula can be found in the Homebrew core but we suggest you tap our formula to get a frequently updated one. It works with Linux, too.
 
 ```bash
@@ -287,6 +312,15 @@ brew install kubectx
 ```
 
 URL: <https://github.com/ahmetb/kubectx>
+
+### K9s
+K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of this project is to make it easier to navigate, observe and manage your deployed applications in the wild. K9s continually watches Kubernetes for changes and offers subsequent commands to interact with your observed resources.
+
+```bash
+brew install derailed/k9s/k9s
+```
+
+URL: https://k9scli.io/topics/install/
 
 ### Docker Desktop
 
@@ -315,20 +349,69 @@ newgrp docker
 docker run hello-world   # test in user mode
 ```
 
+### OpenLens
+
+Open source Kubernetes management tool (alternative for Lens IDE)
+URL: https://github.com/MuhammedKalkan/OpenLens/releases
+
+Extensions to install
+Open Extensions menu, and add the following extensions
+
+- @alebcay/openlens-node-pod-menu
+- lens-extension-network-policy-viewer
+- @nevalla/kube-resource-map
+
+![OpenLenms Extension](media/mac-openlens.png)
+
+### Useful commands
+
 List of all images sorted by name
 
 ```bash
 docker ps --format "table {{.Names}}\t{{.ID}}\t{{.Image}}\t{{.Ports}}" | sort
 ```
 
-### OpenLens
+List of all pods sorted by name
 
-Open source Kubernetes management tool (alternative for Lens IDE)
-URL: https://github.com/MuhammedKalkan/OpenLens/releases
+```bash
+kubectl get pods -n <namespace> -o custom-columns="NAME:.metadata.name,IMAGE:.spec.containers[*].image" | sort
+```
+
+List of pods all mount path
+
+```bash
+kubectl get pods -n qa-env  -o custom-columns="POD:metadata.name,MOUNT:spec.containers[*].volumeMounts[*].mountPath"
+```
 
 -------------------------------------------------------------------------------
 
 ## Tile windows shortcut
+
+### mac OS 15.x
+
+1. Use `Shortcut` app to add tile shortcuts
+2. Select `Gallery`
+3. Search `tile` in the upper right search bar
+4. Add the "Tile Last 2 Windows"
+   ![Shortcut: Gallery](mac-shortcut-1.png)
+
+5. Edit the shortcut and Rename to `Tile Left`
+   ![Shortcut: Edit 1](mac-shortcut-2.png)
+
+6. Remove the last 2 section and change the limit from 2 to 1
+   ![Shortcut: Edit 2](mac-shortcut-3.png)
+
+7. Duplicate the shortcut and do the same for `Tile Right` and also for `Fit Screen`
+8. Copy the new shortcuts to the `Quick Actions` section on the left bar of the application
+9. Go to the `Quick Actions` section and edit the shortcuts
+10. Select `Quick Actions` in the first line and set a shortcut key:
+    Left __`⌃ ⌥ ⌘ →`__
+    Right __`⌃ ⌥ ⌘ ←`__
+    Fit __`⌃ ⌥ ⌘ ↑`__
+    NOTE: if you are using a magic keyboard you may get this combination as result __`⌃ ⌥ ⌘ 🌐︎ ↑`__ this is OK - its map the function key as globe key
+    ![Shortcut: Quick Actions](mac-shortcut-4.png)
+
+__OBSOLETE:__ The following section is working in mac OS 14.x and not for 15.0
 
 URL: https://medium.com/@mohsen-vaziri/mac-keyboard-shortcuts-for-moving-app-windows-bdff89e2d163
 We can assign system-wide keyboard shortcuts to the commands mentioned above.
@@ -351,12 +434,6 @@ Here are my shortcuts:
 Alternatively you can use  Amethyst - A tiling window manager for Mac OS ![Mac OS X][macosx] 
 __Note:__ I didn’t  tested yet
 URL: https://ianyh.com/amethyst/
-
--------------------------------------------------------------------------------
-
-## Google Drive
-
-https://www.google.com/drive/download/
 
 -------------------------------------------------------------------------------
 
@@ -416,12 +493,18 @@ Select use ligatures (ignore the warnings)
 
 -------------------------------------------------------------------------------
 
-## Double Commander
+## Applications
 
-Double Commander is a cross platform open source file manager with two panels side by side. It is inspired by Total Commander and features some new ideas.
+| Application | Description | URL  |
+|-------------|-------------|------|
+| Google Drive | | https://www.google.com/drive/download/ |
+| Double Commander | Double Commander is a cross platform open source file manager with two panels side by side. It is inspired by Total Commander and features some new ideas. | https://sourceforge.net/p/doublecmd/wiki/Download/ |
+| Lightshot | The fastest way to take a customizable screenshot. Download using the appstore. this app is not located in IL region - you may need to change your region to download it. | https://app.prntscr.com/en/download.html |
+| Fredium | Add all your services in one place for quick and easy access and never search your tabs or bookmarks again! You can also add the same service twice or more to be able to login into multiple accounts! |https://ferdium.org/download |
+| Joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | https://joplinapp.org/download/ |
 
-UTL: https://sourceforge.net/p/doublecmd/wiki/Download/
-
+<!-- ------------------------------------------------------------------------------- -->
+<!-- This section should be in the end of the file -->
 <!--Definitions-->
 [macosx]: https://img.icons8.com/color/24/mac-logo.png 'Mac OS X'
 [linux]: https://img.icons8.com/color/24//linux--v1.png 'Linux'
