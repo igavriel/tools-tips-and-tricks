@@ -13,6 +13,7 @@ This procedure describe how to install a new Mac laptop and configure it for pyt
 - [Editors](#editors)
   - [Installing GNU Nano](#installing-gnu-nano)
   - [Vim colors](#vim-colors)
+  - [Kate](#kate)
 - [Docker, Kubernates and other Vegetables](#docker-kubernates-and-other-vegetables)
   - [lazydocker](#lazydocker)
   - [K8s CLI tools](#k8s-cli-tools)
@@ -283,6 +284,20 @@ set pastetoggle=<F2>
 
 Save and close the file
 
+### Kate
+
+To install Kate on macOS, follow these steps:
+1. Download the Kate installer for your Mac Url: https://kate-editor.org/get-it/
+2. Once downloaded, click on the .dmg file and double-click the "kate" icon or drag it to the Applications folder.
+3. You may encounter a security warning stating that "kate" can't be opened because Apple cannot check it for malicious software. To override this:
+   - Go to "System Preferences" > "Security & Privacy" > "General"
+   - Look for a note saying "Kate" was blocked from use
+   - Click "Open Anyway" and confirm in the pop-up
+4. After installation, you can launch Kate from your Applications folder.
+
+Note: For a more stable version, you can consider alternative installation methods:
+- Install Kate using MacPorts by running `sudo port install kate` in the terminal (requires MacPorts to be installed) URL: https://ports.macports.org/port/kate/
+
 -------------------------------------------------------------------------------
 
 ## Docker, Kubernates and other Vegetables
@@ -502,6 +517,7 @@ Select use ligatures (ignore the warnings)
 | Lightshot | The fastest way to take a customizable screenshot. Download using the appstore. this app is not located in IL region - you may need to change your region to download it. | https://app.prntscr.com/en/download.html |
 | Fredium | Add all your services in one place for quick and easy access and never search your tabs or bookmarks again! You can also add the same service twice or more to be able to login into multiple accounts! |https://ferdium.org/download |
 | Joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | https://joplinapp.org/download/ |
+| Kate | Text Editor |  https://kate-editor.org/get-it/ |
 
 <!-- ------------------------------------------------------------------------------- -->
 <!-- This section should be in the end of the file -->
