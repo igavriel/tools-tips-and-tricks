@@ -530,16 +530,45 @@ Select use ligatures (ignore the warnings)
 
 -------------------------------------------------------------------------------
 
+## Chrome Extension
+
+To export your extensions from chrome use the following script in the chrome debugger console.
+
+1. Go to the following chrome page ```chrome://extensions```
+2. Open the developer tools ```control+shift+I``` or ```F12```
+3. In the console paste the following command (In case its blocking write ```allow paste```)
+
+```javascript
+document.querySelector('extensions-manager').extensions_.map(({id, name, state, webStoreUrl}) => ({id, name, state, webStoreUrl}))
+```
+
+### My Favorite Extensions
+
+| Extension | Description |
+|-----------|-------------|
+| [Adblock for Youtube](https://chromewebstore.google.com/detail/cmedhionkhpnakcndndgjdbohmhepckk) | Removes ads from Youtube |
+| [Dark Reader](https://chromewebstore.google.com/detail/eimadpbcbfnmbkopoojfekhnkhdbieeh) | Dark mode for every website. Take care of your eyes, use dark theme for night and daily browsing. |
+| [Jenkins Butler](https://chromewebstore.google.com/detail/iacnkmnaiiokeinfjihcpnklijcbbcbj) | Feature rich Chrome Extension to show status of Jenkins builds directly on your desktop. |
+| [JIRA ShortCut](https://chromewebstore.google.com/detail/kjofpimpbjninggehnclcgkgniacejha) | Copy to clip board jira issue as 'CMD-999: Description' |
+| [OneTab](https://chromewebstore.google.com/detail/chphlpgkkbolifaimnlloiipkdnihall) | click the OneTab icon to convert all of your tabs into a list |
+| [Tab Group Saver](https://chromewebstore.google.com/detail/ghbdjeckopemkoomopmpgjifafpcjhga) | Save and Manage Tab Groups |
+
+
+-------------------------------------------------------------------------------
+
 ## Applications
 
-| Application | Description | URL  |
-|-------------|-------------|------|
-| Google Drive | | https://www.google.com/drive/download/ |
-| Double Commander | Double Commander is a cross platform open source file manager with two panels side by side. It is inspired by Total Commander and features some new ideas. | https://sourceforge.net/p/doublecmd/wiki/Download/ |
-| Lightshot | The fastest way to take a customizable screenshot. Download using the appstore. this app is not located in IL region - you may need to change your region to download it. | https://app.prntscr.com/en/download.html |
-| Fredium | Add all your services in one place for quick and easy access and never search your tabs or bookmarks again! You can also add the same service twice or more to be able to login into multiple accounts! |https://ferdium.org/download |
-| Joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | https://joplinapp.org/download/ |
-| Kate | Text Editor |  https://kate-editor.org/get-it/ |
+Okay, here is the converted 2-column markdown table with the application name as a hyperlink to the URL:
+
+| Application | Description |
+|-------------|-------------|
+| [Google Drive](https://www.google.com/drive/download/) |  |
+| [Double Commander](https://sourceforge.net/p/doublecmd/wiki/Download/) | Double Commander is a cross platform open source file manager with two panels side by side. It is inspired by Total Commander and features some new ideas. |
+| [Lightshot](https://app.prntscr.com/en/download.html) | The fastest way to take a customizable screenshot. Download using the appstore. this app is not located in IL region - you may need to change your region to download it. |
+| [Fredium](https://ferdium.org/download) | Add all your services in one place for quick and easy access and never search your tabs or bookmarks again! You can also add the same service twice or more to be able to login into multiple accounts! |
+| [Joplin](https://joplinapp.org/download/) | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. |
+| [Kate](https://kate-editor.org/get-it/) | Kate is packed with features that will make it easier for you to view and edit all your text files |
+
 
 <!-- ------------------------------------------------------------------------------- -->
 <!-- This section should be in the end of the file -->
