@@ -404,6 +404,28 @@ kubectl get pods -n qa-env  -o custom-columns="POD:metadata.name,MOUNT:spec.cont
 
 ### mac OS 15.x
 
+#### Option 1 - using system preferences
+
+We can assign system-wide keyboard shortcuts:
+
+1. Open __`System Preferences`__ > __`Keyboard`__ > __`Shortcuts`__
+2. On the left pane select __`App Shortcuts`__.
+3. Press the __`+`__ button to create a new shortcut.
+
+Here are my shortcuts:
+| Action | Shortcut |
+|--------|----------|
+| Zoom | __`⌃⌥⌘↑`__ |
+| Left | __`⌃⌥⌘←`__ |
+| Right | __`⌃⌥⌘→`__ |
+| Minimize | __`⌃⌥⌘M`__ |
+
+<div align="center">
+ <img src="media/mac-shortcuts-new.png" alt="Shortcuts mac 15.x">
+</div>
+
+#### Option 2 - using Shortcut application
+
 1. Use `Shortcut` app to add tile shortcuts
 2. Select `Gallery`
 3. Search `tile` in the upper right search bar
@@ -426,7 +448,7 @@ kubectl get pods -n qa-env  -o custom-columns="POD:metadata.name,MOUNT:spec.cont
     NOTE: if you are using a magic keyboard you may get this combination as result __`⌃ ⌥ ⌘ 🌐︎ ↑`__ this is OK - its map the function key as globe key
     ![Shortcut: Quick Actions](media/mac-shortcut-4.png)
 
-__OBSOLETE:__ The following section is working in mac OS 14.x and not for 15.0
+### mac OS 14.x - OBSOLETE: The following section is working in mac OS 14.x and not for 15.0
 
 URL: https://medium.com/@mohsen-vaziri/mac-keyboard-shortcuts-for-moving-app-windows-bdff89e2d163
 We can assign system-wide keyboard shortcuts to the commands mentioned above.
@@ -443,7 +465,7 @@ Here are my shortcuts:
 | Move Window to Right Side of Screen | __`⌃⌥⌘→`__ |
 
 <div align="center">
- <img src="media/mac-shortcuts.png" alt="Docker config">
+ <img src="media/mac-shortcuts.png" alt="Shortcuts mac 14.x">
 </div>
 
 Alternatively you can use  Amethyst - A tiling window manager for Mac OS ![Mac OS X][macosx] 
@@ -466,8 +488,8 @@ Appearance - Change icon
 
 <table border="0">
   <tr>
-    <td><img src="media/mac-maccy-appearance.png" alt="Docker config"></td>
-    <td><img src="media/mac-maccy-general.png" alt="Docker config"></td>
+    <td><img src="media/mac-maccy-appearance.png" alt="Maccy Appereance"></td>
+    <td><img src="media/mac-maccy-general.png" alt="Maccy General"></td>
   </tr>
 </table>
 
@@ -489,21 +511,21 @@ https://iterm2.com/downloads.html
 Setting modify right click to paste from selection
 
 <div align="center">
- <img src="media/mac-iterm2-pointer.png" alt="Docker config">
+ <img src="media/mac-iterm2-pointer.png" alt="iTerm2 Pointer">
 </div>
 
 Profiles: Change title - Job - PWD
 Change icon
 
 <div align="center">
- <img src="media/mac-iterm2-profile.png" alt="Docker config">
+ <img src="media/mac-iterm2-profile.png" alt="iTerm2 Profile">
 </div>
 
 Profiles Text - Choose Meslo Font
 Select use ligatures (ignore the warnings)
 
 <div align="center">
- <img src="media/mac-iterm2-fonts.png" alt="Docker config">
+ <img src="media/mac-iterm2-fonts.png" alt="iTerm2 Fonts">
 </div>
 
 -------------------------------------------------------------------------------
