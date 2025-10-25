@@ -100,7 +100,7 @@ Find the line which says plugins=(git) and replace that line with
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)
 
 # use this line for python, docker, k8s, npm and zsh plugins
-plugins=(git brew colored-man-pages colorize python pip pyenv docker kubectl helm azure npm nvm zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete)
+plugins=(git brew colored-man-pages colorize python pip pyenv docker kubectl helm azure npm nvm vault zsh-interactive-cd zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete)
 ```
 
 run .zshrc
@@ -402,6 +402,12 @@ kubectl get pods -n qa-env  -o custom-columns="POD:metadata.name,MOUNT:spec.cont
 
 ## Tile windows shortcut
 
+#### Open source Rectangle application
+
+1. go to the web site https://rectangleapp.com/
+2. download the latest version and install it
+3. Allow to load it on login `system > General > Login items & Extensions`
+
 ### mac OS 15.x
 
 #### Option 1 - using system preferences
@@ -495,7 +501,20 @@ Appearance - Change icon
 
 -------------------------------------------------------------------------------
 
-## Meslo-Font
+## Fonts:
+
+### Hack Nerd Font
+
+Nerd Fonts patches developer targeted fonts with a high number of glyphs (icons).
+URL: https://www.nerdfonts.com/
+
+Download: https://github.com/ryanoasis/nerd-fonts/releases
+
+Hack Font URL: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Hack.zip
+
+Extract the zip and install fonts
+
+### Meslo-Font
 
 Meslo LG is a customized version of Apple’s Menlo-Regular font (which is a customized Bitstream Vera Sans Mono).
 URL: https://github.com/andreberg/Meslo-Font
@@ -521,7 +540,7 @@ Change icon
  <img src="media/mac-iterm2-profile.png" alt="iTerm2 Profile">
 </div>
 
-Profiles Text - Choose Meslo Font
+Profiles Text - Choose `Hack Nerd Font Mono` or `MesloLGS NF`
 Select use ligatures (ignore the warnings)
 
 <div align="center">
@@ -551,14 +570,12 @@ document.querySelector('extensions-manager').extensions_.map(({id, name, state, 
 | [Jenkins Butler](https://chromewebstore.google.com/detail/iacnkmnaiiokeinfjihcpnklijcbbcbj) | Feature rich Chrome Extension to show status of Jenkins builds directly on your desktop. |
 | [JIRA ShortCut](https://chromewebstore.google.com/detail/kjofpimpbjninggehnclcgkgniacejha) | Copy to clip board jira issue as 'CMD-999: Description' |
 | [OneTab](https://chromewebstore.google.com/detail/chphlpgkkbolifaimnlloiipkdnihall) | click the OneTab icon to convert all of your tabs into a list |
-| [Tab Group Saver](https://chromewebstore.google.com/detail/ghbdjeckopemkoomopmpgjifafpcjhga) | Save and Manage Tab Groups |
+| [TabPilot](https://chromewebstore.google.com/detail/ghbdjeckopemkoomopmpgjifafpcjhga) | Save and Manage Tab Groups |
 
 
 -------------------------------------------------------------------------------
 
 ## Applications
-
-Okay, here is the converted 2-column markdown table with the application name as a hyperlink to the URL:
 
 | Application | Description |
 |-------------|-------------|
@@ -568,6 +585,15 @@ Okay, here is the converted 2-column markdown table with the application name as
 | [Fredium](https://ferdium.org/download) | Add all your services in one place for quick and easy access and never search your tabs or bookmarks again! You can also add the same service twice or more to be able to login into multiple accounts! |
 | [Joplin](https://joplinapp.org/download/) | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. |
 | [Kate](https://kate-editor.org/get-it/) | Kate is packed with features that will make it easier for you to view and edit all your text files |
+| [Meld](https://yousseb.github.io/meld/) | File and folder comparison made easy for Mac/OSX |
+| [MX Power Gadget](https://www.seense.com/menubarstats/mxpg/) | Apple Silicon Power Gadget |
+| [UTM](https://mac.getutm.app/) | Securely run operating systems on your Mac |
+
+AI Tools
+| Application | Description |
+|-------------|-------------|
+| [lmstudio](https://lmstudio.ai/) | Local AI, on Your Computer. Run local AI models like gpt-oss, Qwen, Gemma, DeepSeek and many more on your computer, privately and for free. |
+| [ollama](https://ollama.com/) | Chat & build with open models |
 
 
 <!-- ------------------------------------------------------------------------------- -->
