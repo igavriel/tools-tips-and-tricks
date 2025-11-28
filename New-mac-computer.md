@@ -586,14 +586,22 @@ document.querySelector('extensions-manager').extensions_.map(({id, name, state, 
 | [Kate](https://kate-editor.org/get-it/) | Feature-rich text editor for viewing and editing plain text files. |
 | [Meld](https://yousseb.github.io/meld/) | File and folder comparison utility for macOS. |
 | [MX Power Gadget](https://www.seense.com/menubarstats/mxpg/) | Apple Silicon power monitoring tool. |
-| [UTM](https://mac.getutm.app/) | Run virtual machines securely on your Mac. |
+| [UTM](https://mac.getutm.app/) | Run virtual machines securely on your Mac |
+| [Boring Notch](https://github.com/TheBoredTeam/boring.notch) | The coolest way to make your MacBook’s notch the star of the show! |
+| [Latest](https://github.com/mangerlahn/Latest) | Checks if all your apps are up to date |
+| [macOS Open Source](https://github.com/serhii-londar/open-source-mac-os-apps) | Awesome macOS Open Source Applications |
+
+
 
 ### AI Tools
 
 | Application | Description |
 |-------------|-------------|
+| [LLaMA.cpp](https://github.com/ggml-org/llama.cpp) | LLM inference in C/C++ |
 | [lmstudio](https://lmstudio.ai/) | Run local AI models—GPT-OSS, Qwen, Gemma, DeepSeek, and more—privately on your computer. |
 | [ollama](https://ollama.com/) | Chat with and deploy open-source models locally. |
+| [Hugging Face](https://huggingface.co/datasets) | Free GGUF models |
+
 
 <!-- ------------------------------------------------------------------------------- -->
 <!-- This section should be at the end of the file -->
