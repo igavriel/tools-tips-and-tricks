@@ -1,6 +1,11 @@
 # Setting Up a New Mac
 
-This guide explains how to prepare a new Mac laptop for Python development. Wherever possible, it also points out equivalent Linux shell commands.
+This document explains how to prepare a new Mac laptop for Python and node development. Wherever possible, it also points out equivalent Linux shell commands.
+Most of the instructions assume you are using Zsh as your shell. If you are using Bash, please adjust accordingly.
+
+Warning: use this article at your own risk. Always back up your data before making significant changes to your system.
+
+-------------------------------------------------------------------------------
 
 ## Contents
 - [CLI Tools](#cli-tools)
@@ -39,6 +44,7 @@ This guide explains how to prepare a new Mac laptop for Python development. Wher
 
 URL: <https://brew.sh/>
 
+homebrew - The Missing Package Manager for macOS (or Linux)
 Paste this command into a macOS Terminal or Linux shell prompt:
 
 ```bash
@@ -404,7 +410,7 @@ kubectl get pods -n qa-env -o custom-columns="POD:metadata.name,MOUNT:spec.conta
 
 ## Tile Window Shortcuts
 
-#### Rectangle (open source)
+### Option A: Rectangle (open source) - **recommended**
 
 1. Visit <https://rectangleapp.com/>.
 2. Download and install the latest release.
@@ -412,7 +418,7 @@ kubectl get pods -n qa-env -o custom-columns="POD:metadata.name,MOUNT:spec.conta
 
 ### macOS 15.x
 
-#### Option 1 – Using System Settings
+#### Option B – Using System Settings
 
 Assign system-wide keyboard shortcuts:
 
@@ -433,7 +439,7 @@ Recommended shortcuts:
  <img src="media/mac-shortcuts-new.png" alt="Shortcuts macOS 15.x">
 </div>
 
-#### Option 2 – Using the Shortcuts App
+#### Option C – Using the Shortcuts App
 
 1. Open the **Shortcuts** app.
 2. Select **Gallery**.
@@ -456,7 +462,7 @@ Recommended shortcuts:
 
     ![Shortcut: Quick Actions](media/mac-shortcut-4.png)
 
-### macOS 14.x (Legacy)
+### macOS 14.x (Legacy) - Option D
 
 The following approach works on macOS 14.x but not on 15.x.  
 URL: <https://medium.com/@mohsen-vaziri/mac-keyboard-shortcuts-for-moving-app-windows-bdff89e2d163>
@@ -512,7 +518,7 @@ Download: <https://github.com/ryanoasis/nerd-fonts/releases>
 
 Hack font download: <https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Hack.zip>
 
-Extract the ZIP archive and install the fonts.
+Extract the ZIP archive and install the fonts by double-clicking each font file and selecting "Install Font".
 
 ### Meslo Font
 
@@ -567,9 +573,11 @@ document.querySelector('extensions-manager').extensions_.map(({id, name, state, 
 |-----------|-------------|
 | [Adblock for YouTube](https://chromewebstore.google.com/detail/cmedhionkhpnakcndndgjdbohmhepckk) | Removes ads from YouTube. |
 | [Dark Reader](https://chromewebstore.google.com/detail/eimadpbcbfnmbkopoojfekhnkhdbieeh) | Applies dark mode to every website and reduces eye strain. |
+| [Easy Auto Refresh](https://chromewebstore.google.com/detail/easy-auto-refresh/aabcgdmkeabbnleenpncegpcngjpnjkc) | Automatically refreshes web pages at specified intervals. |
 | [Jenkins Butler](https://chromewebstore.google.com/detail/iacnkmnaiiokeinfjihcpnklijcbbcbj) | Displays Jenkins build statuses directly in Chrome. |
 | [JIRA ShortCut](https://chromewebstore.google.com/detail/kjofpimpbjninggehnclcgkgniacejha) | Copies the current Jira issue as `CMD-999: Description`. |
 | [OneTab](https://chromewebstore.google.com/detail/chphlpgkkbolifaimnlloiipkdnihall) | Converts all open tabs into a single list with one click. |
+| [Tab Auto Close](https://chromewebstore.google.com/detail/tabs-auto-close/mbodbfopnnihkmkhcojmieknngpcalhf) | Closes tabs matching regular expressions automatically after a timeout. |
 | [TabPilot](https://chromewebstore.google.com/detail/ghbdjeckopemkoomopmpgjifafpcjhga) | Saves and manages tab groups. |
 
 -------------------------------------------------------------------------------
@@ -579,18 +587,22 @@ document.querySelector('extensions-manager').extensions_.map(({id, name, state, 
 | Application | Description |
 |-------------|-------------|
 | [Google Drive](https://www.google.com/drive/download/) | File synchronization and backup client. |
+| [Nimble Commander](https://magnumbytes.com/download/) | Fast and lightweight file manager with dual-pane interface. [appstore](https://apps.apple.com/us/app/nimble-commander/id905202937?mt=12) |
+| [muCommander](https://www.mucommander.com/#download) | Cross-platform file manager with dual-pane interface. |
 | [Double Commander](https://sourceforge.net/p/doublecmd/wiki/Download/) | Cross-platform twin-panel file manager inspired by Total Commander. |
 | [Lightshot](https://app.prntscr.com/en/download.html) | Quick screenshot utility. Download from the App Store; change region if it is unavailable in IL. |
+| [Alt Tab](https://alt-tab-macos.netlify.app/) | brings the power of Windows alt-tab to macOS. |
+| [Thock](https://github.com/kamillobinski/thock) | Customizable haptic feedback for your MacBook's keyboard and trackpad. |
 | [Ferdium](https://ferdium.org/download) | Aggregates multiple services in one app and supports multiple accounts per service. |
 | [Joplin](https://joplinapp.org/download/) | Open-source note-taking app with secure sync across devices. |
+| [Logseq](https://logseq.com/downloads) | Privacy-first, open-source knowledge base and note-taking app. |
 | [Kate](https://kate-editor.org/get-it/) | Feature-rich text editor for viewing and editing plain text files. |
 | [Meld](https://yousseb.github.io/meld/) | File and folder comparison utility for macOS. |
 | [MX Power Gadget](https://www.seense.com/menubarstats/mxpg/) | Apple Silicon power monitoring tool. |
 | [UTM](https://mac.getutm.app/) | Run virtual machines securely on your Mac |
 | [Boring Notch](https://github.com/TheBoredTeam/boring.notch) | The coolest way to make your MacBook’s notch the star of the show! |
 | [Latest](https://github.com/mangerlahn/Latest) | Checks if all your apps are up to date |
-| [macOS Open Source](https://github.com/serhii-londar/open-source-mac-os-apps) | Awesome macOS Open Source Applications |
-
+| [Awesome macOS Open Source](https://github.com/serhii-londar/open-source-mac-os-apps) | Awesome macOS Open Source Applications |
 
 
 ### AI Tools
@@ -602,6 +614,20 @@ document.querySelector('extensions-manager').extensions_.map(({id, name, state, 
 | [ollama](https://ollama.com/) | Chat with and deploy open-source models locally. |
 | [Hugging Face](https://huggingface.co/datasets) | Free GGUF models |
 
+Models in GGUF format:
+* [Qwen/Qwen3-4B-Thinking-2507](https://huggingface.co/Qwen/Qwen3-4B-Thinking-2507) 2.50 GB
+* [openai/gpt-oss-20b](https://huggingface.co/openai/gpt-oss-20b) 12.11 GB
+* [Qwen/Qwen3-Coder-30B-A3B-Instruct](https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct) 18.63 GB
+
+
+LLaMA.cpp run command example:
+
+```bash
+# run gpt-oss-20b model in CLI interactive mode
+llama-cli -m ~/models/lmstudio-community/gpt-oss-20b-GGUF/gpt-oss-20b-MXFP4.gguf --interactive
+# or run the model using the llama-server - server at 127.0.0.1:8080
+llama-server -m ~/models/lmstudio-community/gpt-oss-20b-GGUF/gpt-oss-20b-MXFP4.gguf
+```
 
 <!-- ------------------------------------------------------------------------------- -->
 <!-- This section should be at the end of the file -->
