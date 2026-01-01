@@ -584,25 +584,27 @@ document.querySelector('extensions-manager').extensions_.map(({id, name, state, 
 
 ## Applications
 
-| Application | Description |
-|-------------|-------------|
-| [Google Drive](https://www.google.com/drive/download/) | File synchronization and backup client. |
-| [Nimble Commander](https://magnumbytes.com/download/) | Fast and lightweight file manager with dual-pane interface. [appstore](https://apps.apple.com/us/app/nimble-commander/id905202937?mt=12) |
-| [muCommander](https://www.mucommander.com/#download) | Cross-platform file manager with dual-pane interface. |
-| [Double Commander](https://sourceforge.net/p/doublecmd/wiki/Download/) | Cross-platform twin-panel file manager inspired by Total Commander. |
-| [Lightshot](https://app.prntscr.com/en/download.html) | Quick screenshot utility. Download from the App Store; change region if it is unavailable in IL. |
-| [Alt Tab](https://alt-tab-macos.netlify.app/) | brings the power of Windows alt-tab to macOS. |
-| [Thock](https://github.com/kamillobinski/thock) | Customizable haptic feedback for your MacBook's keyboard and trackpad. |
-| [Ferdium](https://ferdium.org/download) | Aggregates multiple services in one app and supports multiple accounts per service. |
-| [Joplin](https://joplinapp.org/download/) | Open-source note-taking app with secure sync across devices. |
-| [Logseq](https://logseq.com/downloads) | Privacy-first, open-source knowledge base and note-taking app. |
-| [Kate](https://kate-editor.org/get-it/) | Feature-rich text editor for viewing and editing plain text files. |
-| [Meld](https://yousseb.github.io/meld/) | File and folder comparison utility for macOS. |
-| [MX Power Gadget](https://www.seense.com/menubarstats/mxpg/) | Apple Silicon power monitoring tool. |
-| [UTM](https://mac.getutm.app/) | Run virtual machines securely on your Mac |
-| [Boring Notch](https://github.com/TheBoredTeam/boring.notch) | The coolest way to make your MacBook’s notch the star of the show! |
-| [Latest](https://github.com/mangerlahn/Latest) | Checks if all your apps are up to date |
-| [Awesome macOS Open Source](https://github.com/serhii-londar/open-source-mac-os-apps) | Awesome macOS Open Source Applications |
+| Tag | Application | Description |
+|-----|-------------|-------------|
+| File Management | [Google Drive](https://www.google.com/drive/download/) | File synchronization and backup client. |
+| File Management | [Nimble Commander](https://magnumbytes.com/download/) | Fast and lightweight file manager with dual-pane interface. [appstore](https://apps.apple.com/us/app/nimble-commander/id905202937?mt=12) |
+| File Management | [muCommander](https://www.mucommander.com/#download) | Cross-platform file manager with dual-pane interface. |
+| File Management | [Double Commander](https://sourceforge.net/p/doublecmd/wiki/Download/) | Cross-platform twin-panel file manager inspired by Total Commander. |
+| Notebook | [Joplin](https://joplinapp.org/download/) | Open-source note-taking app with secure sync across devices. |
+| Notebook | [Logseq](https://logseq.com/downloads) | Privacy-first, open-source knowledge base and note-taking app. |
+| Text Editor | [Kate](https://kate-editor.org/get-it/) | Feature-rich text editor for viewing and editing plain text files. |
+| Screenshot | [Lightshot](https://app.prntscr.com/en/download.html) | Quick screenshot utility. Download from the App Store; change region if it is unavailable in IL. |
+| Keyboard | [Thock](https://github.com/kamillobinski/thock) | Customizable haptic feedback for your MacBook's keyboard and trackpad. |
+| Messenger | [Ferdium](https://ferdium.org/download) | Aggregates multiple services in one app and supports multiple accounts per service. |
+| Virtual Machine | [UTM](https://mac.getutm.app/) | Run virtual machines securely on your Mac |
+| Code | [Meld](https://yousseb.github.io/meld/) | File and folder comparison utility for macOS. |
+| Utility | [MX Power Gadget](https://www.seense.com/menubarstats/mxpg/) | Apple Silicon power monitoring tool. |
+| Utility | [Stats](https://github.com/exelban/stats) | System monitor for macOS |
+| Utility | [Alt Tab](https://alt-tab-macos.netlify.app/) | brings the power of Windows alt-tab to macOS. |
+| Utility | [Boring Notch](https://github.com/TheBoredTeam/boring.notch) | The coolest way to make your MacBook’s notch the star of the show! |
+| Utility | [Hidden Bar](https://github.com/dwarvesf/hidden) | Hides the menu bar in macOS |
+| Utility | [Latest](https://github.com/mangerlahn/Latest) | Checks if all your apps are up to date (Appstore)[https://apps.apple.com/us/app/hidden-bar/id1452453066?mt=12] |
+| Utility | [Awesome macOS Open Source](https://github.com/serhii-londar/open-source-mac-os-apps) | Awesome macOS Open Source Applications |
 
 
 ### AI Tools
@@ -610,17 +612,32 @@ document.querySelector('extensions-manager').extensions_.map(({id, name, state, 
 | Application | Description |
 |-------------|-------------|
 | [LLaMA.cpp](https://github.com/ggml-org/llama.cpp) | LLM inference in C/C++ |
-| [lmstudio](https://lmstudio.ai/) | Run local AI models—GPT-OSS, Qwen, Gemma, DeepSeek, and more—privately on your computer. |
+| [lmstudio](https://lmstudio.ai/home) | Run local LLMs like `gpt-oss`, `Qwen3`, `Gemma3`, `DeepSeek` and many more on your computer, privately and for free. |
 | [ollama](https://ollama.com/) | Chat with and deploy open-source models locally. |
+
+
+* **note**: LM Studio uses LLaMA.cpp under the hood for running GGUF models.
+
+
+### Model Sources
+| Application | Description |
+|-------------|-------------|
+| [Ollama models](https://ollama.com/search) | Search for and download open-source models. |
 | [Hugging Face](https://huggingface.co/datasets) | Free GGUF models |
 
-Models in GGUF format:
-* [Qwen/Qwen3-4B-Thinking-2507](https://huggingface.co/Qwen/Qwen3-4B-Thinking-2507) 2.50 GB
-* [openai/gpt-oss-20b](https://huggingface.co/openai/gpt-oss-20b) 12.11 GB
-* [Qwen/Qwen3-Coder-30B-A3B-Instruct](https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct) 18.63 GB
+
+## Model Analysis Table (for Macbook Pro M4 32GB)
+
+| Model | Link | **Size (est.)** | **RAM** | **Speed** | **Coding Fit** | **M4 32GB** | **Suggested Usage** | **Action** |
+|-------|------|-----------------|--------------|-----------|----------------|-------------|---------------------|------------|
+| **qwen2.5-coder-1.5b-instruct** | [qwen2.5-coder-1.5b-instruct](https://huggingface.co/Qwen/qwen2.5-coder-1.5b-instruct) | **1.6GB** | **2GB** | **100+ t/s** | ⭐ **Autocomplete** | ✅ Perfect | **Tab ghost-text** (Python/TS lines) | **KEEP** ⭐ |
+| **deepseek-coder-v2-lite-instruct** | [deepseek-coder-v2-lite-instruct](https://huggingface.co/deepseek-ai/deepseek-coder-v2-lite-instruct) | **9GB** | **12GB** | **35-45 t/s** | ⭐ **Refactor king** | ✅ Perfect | **React hooks/TS types/debug** | **KEEP** ⭐ |
+| **qwen3-coder-30b-a3b-instruct** | [Qwen/Qwen3-Coder-30B-A3B-Instruct](https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct) | **17GB** | **22GB** | **18-25 t/s** | ⭐ **Agent leader** | ✅ Perfect | **Multi-file agents/planning** | **KEEP** ⭐ |
+| **openai/gpt-oss-20b** | [openai/gpt-oss-20b](https://huggingface.co/openai/gpt-oss-20b) | **12GB** | **16GB** | **25-35 t/s** | ✅ **General code** | ✅ Fits | **Mid-weight chat** | **KEEP** (backup) |
+| **qwen/qwen3-4b-thinking-2507** | [Qwen/Qwen3-4B-Thinking-2507](https://huggingface.co/Qwen/Qwen3-4B-Thinking-2507) |**3GB** | **4GB** | **60+ t/s** | ⚠️ **Reasoning** | ✅ Fits | **Light chat** (backup autocomplete) | **OPTIONAL** |
 
 
-LLaMA.cpp run command example:
+### LLaMA.cpp run command example:
 
 ```bash
 # run gpt-oss-20b model in CLI interactive mode
