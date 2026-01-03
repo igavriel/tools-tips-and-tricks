@@ -416,6 +416,9 @@ kubectl get pods -n qa-env -o custom-columns="POD:metadata.name,MOUNT:spec.conta
 2. Download and install the latest release.
 3. Allow Rectangle to launch on login: **System Settings** > **General** > **Login Items & Extensions**.
 
+<details>
+<summary>Other Alternatives - Click to expand</summary>
+
 ### macOS 15.x
 
 #### Option B – Using System Settings
@@ -485,6 +488,8 @@ Recommended shortcuts:
 
 Alternatively, you can use [Amethyst](https://ianyh.com/amethyst/), a tiling window manager for macOS ![Mac OS X][macosx].  
 __Note:__ I have not tested it yet.
+
+</details>
 
 -------------------------------------------------------------------------------
 
@@ -645,6 +650,10 @@ llama-cli -m ~/models/lmstudio-community/gpt-oss-20b-GGUF/gpt-oss-20b-MXFP4.gguf
 # or run the model using the llama-server - server at 127.0.0.1:8080
 llama-server -m ~/models/lmstudio-community/gpt-oss-20b-GGUF/gpt-oss-20b-MXFP4.gguf
 ```
+
+-------------------------------------------------------------------------------
+
+back to [Contents](#contents)
 
 <!-- ------------------------------------------------------------------------------- -->
 <!-- This section should be at the end of the file -->
