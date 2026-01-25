@@ -393,6 +393,128 @@ mkdir -p .n8n data postgres-data
 docker-compose up -d
 ```
 
+## Docker Networking: Accessing Local and External Services
+
+### Overview
+
+The n8n container can access both:
+- **External services** (internet): APIs, cloud services, external LLMs, etc.
+- **Services on your host machine**: Local LLMs, databases, APIs running on your computer
+
+### Accessing External Services
+
+By default, Docker containers have internet access. You can use n8n nodes (HTTP Request, OpenAI, etc.) to connect to external services using their public URLs:
+
+- External APIs: `https://api.example.com`
+- Cloud LLMs: `https://api.openai.com`, `https://api.anthropic.com`
+- Any public service on the internet
+
+### Accessing Services on Your Host Machine
+
+To access services running on your host machine (like local LLMs), you need to use a special hostname instead of `localhost` or `127.0.0.1`.
+
+#### On macOS and Windows (Docker Desktop)
+
+Use `host.docker.internal` to access services on your host machine:
+
+**Example: Accessing a local LLM server**
+
+If you're running a local LLM server on your host at `http://localhost:8080` (e.g., using llama-server), configure n8n to access it as:
+
+```
+http://host.docker.internal:8080
+```
+
+**Example: Accessing other local services**
+
+- Local database on port 5432: `host.docker.internal:5432`
+- Local API on port 3000: `http://host.docker.internal:3000`
+- Local webhook receiver: `http://host.docker.internal:5000`
+
+#### On Linux
+
+On Linux, `host.docker.internal` may not be available by default. You have two options:
+
+1. **Use the host's IP address**: Find your host's IP and use it directly
+   ```bash
+   # Find your host IP (usually the Docker bridge gateway)
+   ip addr show docker0 | grep inet
+   # Or use
+   hostname -I | awk '{print $1}'
+   ```
+
+2. **Add extra_hosts to docker-compose.yml**:
+   ```yaml
+   services:
+     n8n:
+       # ... other configuration ...
+       extra_hosts:
+         - "host.docker.internal:host-gateway"
+   ```
+
+### Example: Connecting n8n to a Local LLM
+
+If you're running a local LLM server (like llama-server, Ollama, or LM Studio) on your host:
+
+1. **Start your local LLM server** on your host machine (e.g., on port 8080)
+
+2. **In n8n workflows**, use the HTTP Request node with:
+   - **URL**: `http://host.docker.internal:8080/v1/chat/completions` (or your LLM's endpoint)
+   - **Method**: POST
+   - **Headers**: `Content-Type: application/json`
+   - **Body**: Your LLM request payload
+
+3. **Example HTTP Request node configuration**:
+   ```json
+   {
+     "method": "POST",
+     "url": "http://host.docker.internal:8080/v1/chat/completions",
+     "headers": {
+       "Content-Type": "application/json"
+     },
+     "body": {
+       "model": "your-model",
+       "messages": [
+         {
+           "role": "user",
+           "content": "{{ $json.message }}"
+         }
+       ]
+     }
+   }
+   ```
+
+### Testing Connectivity
+
+You can test if n8n can reach your host services by:
+
+1. **Using the HTTP Request node** in n8n to make a test request to `http://host.docker.internal:YOUR_PORT`
+2. **Checking container logs** if connections fail: `docker-compose logs n8n`
+3. **Using exec to test from inside the container**:
+   ```bash
+   docker exec -it n8n wget -O- http://host.docker.internal:8080
+   ```
+
+### Important Notes
+
+- **Firewall**: Ensure your host machine's firewall allows connections from Docker containers
+- **Service binding**: Your local service must be bound to `0.0.0.0` or `*`, not just `127.0.0.1`, to accept connections from Docker
+- **Port availability**: Make sure the ports you're trying to access are not blocked
+- **Network isolation**: The n8n container is on the `n8n-network` bridge network, which has internet access and can reach the host via `host.docker.internal`
+
+### Troubleshooting Network Issues
+
+If you can't connect to a local service:
+
+1. **Verify the service is running**: Check that your local LLM/service is actually running and accessible from your host
+2. **Check the port**: Ensure you're using the correct port number
+3. **Test from host**: Try accessing the service from your host machine first: `curl http://localhost:8080`
+4. **Check Docker network**: Verify the container can reach the host:
+   ```bash
+   docker exec -it n8n ping -c 2 host.docker.internal
+   ```
+5. **Check service binding**: Ensure your service listens on `0.0.0.0`, not just `127.0.0.1`
+
 ## Security Recommendations
 
 1. **Change Default Passwords**: Always change the default passwords in the `.env` file
