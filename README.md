@@ -4,6 +4,8 @@ Collection of Tools, Tips and Tricks and other
 
 [Install a new mac](New-mac-computer.md) useful information for developers.
 
+[Change Language](./windows/CapsLang.md) CapsLock language switch on windows
+
 [Configure Cursor AI](./develop/cursor-ai.md) Basic config for cursor and extensions list
 
 [Extensions List](./develop/extensions.md) Extensions list for cursor and vscode.
